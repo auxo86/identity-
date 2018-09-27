@@ -136,7 +136,7 @@ namespace identity實作.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [AllowAnonymous] //優先權 action > controller > global
         public ActionResult Register()
         {
             return View();
@@ -151,7 +151,7 @@ namespace identity實作.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, City = model.City };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {

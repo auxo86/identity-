@@ -79,6 +79,7 @@ namespace identity實作.Models
         [Display(Name = "確認密碼")]
         [Compare("Password", ErrorMessage = "密碼和確認密碼不相符。")]
         public string ConfirmPassword { get; set; }
+        public string City { get; set; }
     }
 
     public class ResetPasswordViewModel

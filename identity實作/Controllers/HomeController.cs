@@ -13,6 +13,7 @@ namespace identity實作.Controllers
             return View();
         }
 
+        [Authorize(Users="Candy@test.com")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
